@@ -7,6 +7,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 public class Star_HomeWork_2 {
     private WebDriver driver;
 
@@ -22,7 +25,7 @@ public class Star_HomeWork_2 {
     }
 
     @Test
-    public void CalcLam () throws InterruptedException {
+    public void CalcLam() throws InterruptedException {
         driver.get("https://calc.by/building-calculators/laminate.html");
 
         WebElement selectWay = driver.findElement(By.id("laying_method_laminate"));
@@ -44,11 +47,12 @@ public class Star_HomeWork_2 {
         choice.click();
         WebElement button = driver.findElement(By.className("calc-btn-div"));
         button.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        WebElement numBoards= driver.findElement(By.cssSelector(".calc-result div:first-child"));
-        Assert.assertEquals(numBoards.getAttribute("innerText"), "Требуемое количество досок ламината: 53");
-        /*WebElement numBox= driver.findElement(By.cssSelector(".calc-result div:nth-child(2)"));
-        Assert.assertEquals(numBox.getAttribute("value"), "Количество упаковок ламината: 7");*/
+        WebElement numBoards = driver.findElement(By.cssSelector(".calc-result div:first-child"));
+        Assert.assertEquals(numBoards.getText(), "Требуемое количество досок ламината: 53");
+        WebElement numBox = driver.findElement(By.cssSelector(".calc-result div:nth-child(2)"));
+        Assert.assertEquals(numBox.getText(), "Количество упаковок ламината: 7");
         Thread.sleep(20000);
     }
 }

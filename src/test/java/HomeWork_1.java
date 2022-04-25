@@ -24,6 +24,7 @@ public class HomeWork_1 {
     @Test
     public void CalcRehau() throws InterruptedException {
         driver.get("https://kermi-fko.ru/raschety/Calc-Rehau-Solelec.aspx");
+
         WebElement widthFloor = driver.findElement(By.id("el_f_width"));
         widthFloor.sendKeys("5");
         WebElement lengthFloor = driver.findElement(By.id("el_f_lenght"));
