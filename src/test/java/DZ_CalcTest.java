@@ -72,4 +72,9 @@ public class DZ_CalcTest {
     public void testIgnore(){
     Assert.assertEquals(calculator.divInt(6,3),2, "Не делится без остатка");
     }
+
+    // ToDo: Название тестовых методов - переделать согласно https://dzone.com/articles/7-popular-unit-test-naming
+    // Todo: Между методами должна быть пустая строка
+    // ToDo: Форматирование текста в классе Code -> Reformat Code
+    // ToDo: Сообщения в ошибках должны быть более информативными, чтобы было понятно, что именно пошло не так
 }
